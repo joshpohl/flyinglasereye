@@ -14,6 +14,11 @@ Player = game.Class.extend({
         var y = 500;
         this.sprite = new game.MovieClip([
             game.Texture.fromImage('media/player1.png'),
+            game.Texture.fromImage('media/player1.png'),
+            game.Texture.fromImage('media/player1.png'),
+            game.Texture.fromImage('media/player1.png'),
+            game.Texture.fromImage('media/player2.png'),
+            game.Texture.fromImage('media/player2.png'),
             game.Texture.fromImage('media/player2.png')
         ]);
         this.sprite.position.x = x;
@@ -31,7 +36,7 @@ Player = game.Class.extend({
             collisionGroup: 1,
         });
         this.body.collide = this.collide.bind(this);
-        var shape = new game.Rectangle(63+4, 84-4-8);
+        var shape = new game.Rectangle(128+4, 48-4-8);
         this.body.addShape(shape);
         game.scene.world.addBody(this.body);
 
