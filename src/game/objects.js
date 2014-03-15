@@ -31,7 +31,7 @@ Player = game.Class.extend({
             collisionGroup: 1,
         });
         this.body.collide = this.collide.bind(this);
-        var shape = new game.Rectangle(128+4, 48-4-8);
+        var shape = new game.Rectangle(63+4, 84-4-8);
         this.body.addShape(shape);
         game.scene.world.addBody(this.body);
 
@@ -48,21 +48,22 @@ Player = game.Class.extend({
         this.smokeEmitter.textures.push('media/particle.png');
         game.scene.emitters.push(this.smokeEmitter);
 
-        this.flyEmitter = new game.Emitter({
-            life: 0,
-            rate: 0,
-            positionVar: {x: 50, y: 50},
-            targetForce: 200,
-            speed: 100,
-            velocityLimit: {x: 100, y: 100},
-            endAlpha: 1
-        });
-        this.flyEmitter.container = game.scene.stage;
-        this.flyEmitter.textures.push('media/particle2.png');
-        this.flyEmitter.position.x = this.sprite.position.x + 30;
-        this.flyEmitter.position.y = this.sprite.position.y - 30;
-        this.flyEmitter.emit(5);
-        game.scene.emitters.push(this.flyEmitter);
+//        this.flyEmitter = new game.Emitter({
+//            life: 0,
+//            rate: 0,
+//            positionVar: {x: 50, y: 50},
+//            targetForce: 200,
+//            speed: 100,
+//            velocityLimit: {x: 100, y: 100},
+//            endAlpha: 1
+//        });
+//        this.flyEmitter.container = game.scene.stage;
+//        this.flyEmitter.textures.push('media/particle2.png');
+//        this.flyEmitter.position.x = this.sprite.position.x + 30;
+//        this.flyEmitter.position.y = this.sprite.position.y - 30;
+//        this.flyEmitter.emit(5);
+        // no more flies
+        //game.scene.emitters.push(this.flyEmitter);
     },
 
     collide: function() {
@@ -82,8 +83,8 @@ Player = game.Class.extend({
         this.smokeEmitter.position.x = this.sprite.position.x - 60;
         this.smokeEmitter.position.y = this.sprite.position.y;
 
-        this.flyEmitter.target.x = this.sprite.position.x + 30;
-        this.flyEmitter.target.y = this.sprite.position.y - 30;
+//        this.flyEmitter.target.x = this.sprite.position.x + 30;
+//        this.flyEmitter.target.y = this.sprite.position.y - 30;
     },
 
     jump: function() {
