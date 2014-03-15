@@ -36,17 +36,17 @@ Player = game.Class.extend({
             collisionGroup: 1,
         });
         this.body.collide = this.collide.bind(this);
-        var shape = new game.Rectangle(128+4, 48-4-8);
+        var shape = new game.Rectangle(63, 48-4-8);
         this.body.addShape(shape);
         game.scene.world.addBody(this.body);
 
         this.smokeEmitter = new game.Emitter({
             angle: Math.PI,
-            angleVar: 0.1,
+            angleVar: 0.9,
             endAlpha: 1,
             life: 0.4,
             lifeVar: 0.2,
-            count: 2,
+            count: 50,
             speed: 400,
         });
         this.smokeEmitter.container = game.scene.stage;
@@ -87,7 +87,7 @@ Player = game.Class.extend({
         this.smokeEmitter.position.x = this.sprite.position.x - 60;
         this.smokeEmitter.position.y = this.sprite.position.y;
 
-        this.flyEmitter.target.x = this.sprite.position.x + 30;
+        this.flyEmitter.target.x = this.sprite.position.x +30;
         this.flyEmitter.target.y = this.sprite.position.y - 30;
     },
 
