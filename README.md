@@ -1,4 +1,4 @@
-# Flying Dog
+# Flying Shanahan
 
 Flappy Bird clone made with [Panda.js](http://github.com/ekelokorpi/panda.js) game engine.
 
